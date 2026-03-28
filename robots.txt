@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scanpang.github.io/rainbow-homepage/sitemap.xml
