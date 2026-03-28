@@ -75,7 +75,7 @@
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;overflow-x:hidden}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;overflow-x:hidden;word-break:keep-all}
     a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:block}ul{list-style:none}button{border:none;background:none;cursor:pointer;font:inherit}
     :root{--pri:#1a1a1a;--sec:#666;--mut:#999;--bgl:#f8f8f8;--bdr:#e5e5e5;--mxw:1200px;--hh:72px}
 
@@ -161,7 +161,7 @@
     .pfg{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
     .pfc{border-radius:16px;overflow:hidden;transition:transform .3s;cursor:pointer}
     .pfc:hover{transform:translateY(-8px)}
-    .pfci{aspect-ratio:4/3;overflow:hidden}
+    .pfci{aspect-ratio:5/8;overflow:hidden}
     .pfci img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
     .pfc:hover .pfci img{transform:scale(1.05)}
     .pfcf{padding:16px 0}
@@ -192,7 +192,8 @@
     /* 푸터 */
     .footer{background:#1a1a1a;color:#999;padding:60px 0 40px}
     .fti{max-width:var(--mxw);margin:0 auto;padding:0 24px}
-    .ftt{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+    .ftt{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:40px}
+    .ftlg{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
     .ftl img{height:28px;width:auto;margin-bottom:16px;filter:brightness(10)}
     .ftif{font-size:12px;line-height:1.8;color:#666}
     .ftif a{color:#888}
@@ -202,15 +203,15 @@
     .ftb{border-top:1px solid #333;padding-top:24px;font-size:12px;color:#555}
 
     /* 반응형 */
-    @media(max-width:1024px){.pfg{grid-template-columns:repeat(2,1fr)}.ftt{grid-template-columns:1fr 1fr}}
+    @media(max-width:1024px){.pfg{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){
       .sec{padding:80px 0}.hn,.hc,.lt{display:none}.hb{display:flex}
       .hero{padding:100px 24px 48px;min-height:70vh}.hero h1{font-size:28px}.hero h1 span{font-size:16px}.st{font-size:24px}
       .ag,.pg,.kg{grid-template-columns:1fr;gap:32px}.av,.pv{max-width:100%;margin:0 auto}
       .pfg{grid-template-columns:1fr}.pfh{flex-direction:column;align-items:flex-start;gap:16px}
-      .ftt{grid-template-columns:1fr;gap:32px}.ct img{width:150px;height:210px}
+      .ftt{grid-template-columns:1fr;gap:32px}.ftlg{grid-template-columns:repeat(3,1fr);gap:24px}.ct img{width:150px;height:210px}
     }
-    @media(max-width:480px){.hbs{flex-direction:column;align-items:center}.bp,.bs{width:100%;max-width:280px;justify-content:center}}
+    @media(max-width:480px){.hbs{flex-direction:column;align-items:center}.hbs .bp,.hbs .bs{width:100%;max-width:280px;justify-content:center}}
   </style>
 </head>
 <body>
@@ -337,9 +338,11 @@
           <div class="ftl"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Flogo-rainbowcompany.png&w=384&q=75" alt="레인보우컴퍼니"></div>
           <p class="ftif">주식회사 레인보우컴퍼니 대표 박지호 • 사업자번호 893-87-02847 • 주소 서울 강남구 역삼로 217 뉴콘텐츠기업지원센터 302호 06224 • 전화 02-563-8938 • <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8938702847" target="_blank" rel="noopener">사업자번호확인</a><br><br>Sales/Partnership - <a href="mailto:contact@rainbowcp.net">contact@rainbowcp.net</a> | Service - <a href="mailto:help@rainbowcp.net">help@rainbowcp.net</a></p>
         </div>
-        <div class="ftlk"><h4>Features</h4><a href="ar-photocard.html">AR Photo Card</a><a href="ar-photokiosk.html">AR Photo Kiosk</a><a href="ar-photosolution.html">AR Solution</a></div>
-        <div class="ftlk"><h4>Company</h4><a href="company.html">About</a><a href="portfolio.html">Portfolio</a></div>
-        <div class="ftlk"><h4>Support</h4><a href="contact.html">Contact</a><a href="https://nupyar.com" target="_blank" rel="noopener">Online Shop</a></div>
+        <div class="ftlg">
+          <div class="ftlk"><h4>Features</h4><a href="ar-photocard.html">AR Photo Card</a><a href="ar-photokiosk.html">AR Photo Kiosk</a><a href="ar-photosolution.html">AR Solution</a></div>
+          <div class="ftlk"><h4>Company</h4><a href="company.html">About</a><a href="portfolio.html">Portfolio</a></div>
+          <div class="ftlk"><h4>Support</h4><a href="contact.html">Contact</a><a href="https://nupyar.com" target="_blank" rel="noopener">Online Shop</a></div>
+        </div>
       </div>
       <div class="ftb"><p>ⓒ 2022–2026 Rainbow Company Corp. All rights reserved.</p></div>
     </div>
