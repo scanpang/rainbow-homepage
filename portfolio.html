@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포트폴리오 | 레인보우컴퍼니</title>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:block}button{border:none;background:none;cursor:pointer;font:inherit}
+    :root{--pri:#1a1a1a;--sec:#666;--mut:#999;--bgl:#f8f8f8;--bdr:#e5e5e5;--mxw:1200px;--hh:72px}
+    .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);height:var(--hh);transition:box-shadow .3s}.header.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}.hi{max-width:var(--mxw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}.hl img{height:32px;width:auto}.hn{display:flex;align-items:center;gap:28px}.hn a{font-size:14px;font-weight:500;color:var(--sec);transition:color .2s;white-space:nowrap}.hn a:hover,.hn a.active{color:var(--pri)}.hr{display:flex;align-items:center;gap:16px}.hc{display:inline-flex;align-items:center;padding:8px 20px;background:var(--pri);color:#fff;border-radius:24px;font-size:14px;font-weight:500}.hc:hover{opacity:.85}.lt{font-size:13px;color:var(--mut);display:flex;gap:4px}.lt span.active{color:var(--pri);font-weight:600}.hb{display:none;flex-direction:column;gap:5px;padding:8px;z-index:1001}.hb span{display:block;width:22px;height:2px;background:var(--pri);transition:.3s;border-radius:1px}.hb.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hb.open span:nth-child(2){opacity:0}.hb.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.mo{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s}.mo.open{opacity:1;pointer-events:all}.mn{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:#fff;z-index:999;transition:right .3s;padding:100px 32px 32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}.mn.open{right:0}.mn a{display:block;padding:16px 0;font-size:16px;font-weight:500;color:var(--pri);border-bottom:1px solid var(--bdr)}
+    .si{max-width:var(--mxw);margin:0 auto;padding:0 24px}
+    .fu{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.fu.vis{opacity:1;transform:translateY(0)}
+    .page-hero{padding:140px 24px 40px;text-align:center}.page-hero h1{font-size:38px;font-weight:700;margin-bottom:12px}.page-hero p{font-size:16px;color:var(--sec)}
+    .pfg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:40px 0 120px}
+    .pfc{border-radius:16px;overflow:hidden;transition:transform .3s;cursor:pointer}
+    .pfc:hover{transform:translateY(-8px)}
+    .pfci{aspect-ratio:4/3;overflow:hidden}.pfci img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .pfc:hover .pfci img{transform:scale(1.05)}
+    .pfcf{padding:16px 0}
+    .pfm{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    .pfd{font-size:12px;color:var(--mut)}.pft{font-size:11px;padding:2px 8px;border-radius:12px;background:var(--bgl);color:var(--sec);font-weight:500}
+    .pfc h3{font-size:14px;font-weight:600;line-height:1.4}
+    .footer{background:#1a1a1a;color:#999;padding:60px 0 40px}.fti{max-width:var(--mxw);margin:0 auto;padding:0 24px}.ftt{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}.ftl img{height:28px;width:auto;margin-bottom:16px;filter:brightness(10)}.ftif{font-size:12px;line-height:1.8;color:#666}.ftif a{color:#888}.ftlk h4{font-size:13px;font-weight:600;color:#ccc;margin-bottom:16px}.ftlk a{display:block;font-size:13px;color:#888;padding:4px 0;transition:color .2s}.ftlk a:hover{color:#fff}.ftb{border-top:1px solid #333;padding-top:24px;font-size:12px;color:#555}
+    @media(max-width:1024px){.pfg{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.hn,.hc,.lt{display:none}.hb{display:flex}.page-hero{padding:100px 24px 24px}.page-hero h1{font-size:26px}.pfg{grid-template-columns:1fr}.ftt{grid-template-columns:1fr;gap:32px}}
+  </style>
+</head>
+<body>
+  <header class="header" id="header"><div class="hi"><a href="index.html" class="hl"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Flogo-rainbowcompany.png&w=384&q=75" alt="레인보우컴퍼니"></a><nav class="hn"><a href="index.html">홈</a><a href="ar-photocard.html">AR 포토카드</a><a href="ar-photokiosk.html">AR 포토키오스크</a><a href="ar-photosolution.html">AR 포토솔루션</a><a href="company.html">회사소개</a><a href="portfolio.html" class="active">포트폴리오</a></nav><div class="hr"><div class="lt"><span class="active">KO</span><span>EN</span></div><a href="https://nupyar.com" target="_blank" class="hc">온라인샵 바로가기 ↗</a><button class="hb" id="hbtn" aria-label="메뉴"><span></span><span></span><span></span></button></div></div></header>
+  <div class="mo" id="mo"></div><nav class="mn" id="mn"><a href="index.html">홈</a><a href="ar-photocard.html">AR 포토카드</a><a href="ar-photokiosk.html">AR 포토키오스크</a><a href="ar-photosolution.html">AR 포토솔루션</a><a href="company.html">회사소개</a><a href="portfolio.html">포트폴리오</a><a href="contact.html">문의하기</a></nav>
+
+  <div class="page-hero fu"><h1>포트폴리오</h1><p>국내의 많은 파트너들과 함께 FAN을 만듭니다.</p></div>
+
+  <div class="si"><div class="pfg" id="pfg"></div></div>
+
+  <footer class="footer"><div class="fti"><div class="ftt"><div><div class="ftl"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Flogo-rainbowcompany.png&w=384&q=75" alt="레인보우컴퍼니"></div><p class="ftif">주식회사 레인보우컴퍼니 대표 박지호 • 사업자번호 893-87-02847 • 주소 서울 강남구 역삼로 217 뉴콘텐츠기업지원센터 302호 06224 • 전화 02-563-8938 • <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8938702847" target="_blank">사업자번호확인</a><br><br>Sales/Partnership - <a href="mailto:contact@rainbowcp.net">contact@rainbowcp.net</a> | Service - <a href="mailto:help@rainbowcp.net">help@rainbowcp.net</a></p></div><div class="ftlk"><h4>Features</h4><a href="ar-photocard.html">AR Photo Card</a><a href="ar-photokiosk.html">AR Photo Kiosk</a><a href="ar-photosolution.html">AR Solution</a></div><div class="ftlk"><h4>Company</h4><a href="company.html">About</a><a href="portfolio.html">Portfolio</a></div><div class="ftlk"><h4>Support</h4><a href="contact.html">Contact</a><a href="https://nupyar.com" target="_blank">Online Shop</a></div></div><div class="ftb"><p>ⓒ 2022–2026 Rainbow Company Corp. All rights reserved.</p></div></div></footer>
+
+  <script>
+    /* ⭐ 포트폴리오 데이터 - 새 항목은 맨 위에 추가 */
+    const PORTFOLIO=[
+      {t:"(주)스튜디오빌 - 영화 맨홀 포토카드 출시",d:"2025. 11",c:"AR 포토카드",i:"https://oqumhuxzytlahtfvngzv.supabase.co/storage/v1/object/public/rainbowcompany/portfolio/afbff7fb4266c7e2055c6d59cc824952ff2eb747.png"},
+      {t:"325엔터 - 엠씨더맥스 이수 2기 멤버십카드 제작",d:"2025. 10",c:"AR 포토카드",i:"https://oqumhuxzytlahtfvngzv.supabase.co/storage/v1/object/public/rainbowcompany/portfolio/b8d44f54a56ef71603bd40431033a982cf7f6c02.png"},
+      {t:"서울시ㆍ문체부ㆍKOCCA - 2회 월드웹툰페스티벌 키오스크 출품",d:"2025. 10",c:"AR 키오스크",i:"https://oqumhuxzytlahtfvngzv.supabase.co/storage/v1/object/public/rainbowcompany/portfolio/6e837e13fc1a871c4353bc28d76cfb7048000de9.png"},
+      {t:"토스 - 게임형 광고 리워드 앱 '스캔팡' 출시",d:"2025. 09",c:"AR 솔루션",i:"https://oqumhuxzytlahtfvngzv.supabase.co/storage/v1/object/public/rainbowcompany/portfolio/9802c94400aa639041b9355e702671434a78b55f.png"},
+    ];
+    document.getElementById('pfg').innerHTML=PORTFOLIO.map(p=>`<div class="pfc fu"><div class="pfci"><img src="${p.i}" alt="${p.t}" loading="lazy"></div><div class="pfcf"><div class="pfm"><span class="pfd">${p.d}</span><span class="pft">${p.c}</span></div><h3>${p.t}</h3></div></div>`).join('');
+
+    window.addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',scrollY>50));
+    const hbtn=document.getElementById('hbtn'),mn=document.getElementById('mn'),mo=document.getElementById('mo');
+    function tgl(){hbtn.classList.toggle('open');mn.classList.toggle('open');mo.classList.toggle('open');document.body.style.overflow=mn.classList.contains('open')?'hidden':''}
+    hbtn.onclick=tgl;mo.onclick=tgl;document.querySelectorAll('.mn a').forEach(a=>a.onclick=tgl);
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

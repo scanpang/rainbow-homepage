@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUPY AR 포토카드 | 레인보우컴퍼니</title>
+  <meta name="description" content="사진. 영상. 소리까지 담는 Next-Generation 포토카드">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:block}ul{list-style:none}button{border:none;background:none;cursor:pointer;font:inherit}
+    :root{--pri:#1a1a1a;--sec:#666;--mut:#999;--bgl:#f8f8f8;--bdr:#e5e5e5;--mxw:1200px;--hh:72px}
+    .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);height:var(--hh);transition:box-shadow .3s}.header.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}.hi{max-width:var(--mxw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}.hl img{height:32px;width:auto}.hn{display:flex;align-items:center;gap:28px}.hn a{font-size:14px;font-weight:500;color:var(--sec);transition:color .2s;white-space:nowrap}.hn a:hover,.hn a.active{color:var(--pri)}.hr{display:flex;align-items:center;gap:16px}.hc{display:inline-flex;align-items:center;padding:8px 20px;background:var(--pri);color:#fff;border-radius:24px;font-size:14px;font-weight:500;transition:opacity .2s}.hc:hover{opacity:.85}.lt{font-size:13px;color:var(--mut);cursor:pointer;display:flex;gap:4px}.lt span.active{color:var(--pri);font-weight:600}.hb{display:none;flex-direction:column;gap:5px;padding:8px;z-index:1001}.hb span{display:block;width:22px;height:2px;background:var(--pri);transition:.3s;border-radius:1px}.hb.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hb.open span:nth-child(2){opacity:0}.hb.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.mo{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s}.mo.open{opacity:1;pointer-events:all}.mn{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:#fff;z-index:999;transition:right .3s;padding:100px 32px 32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}.mn.open{right:0}.mn a{display:block;padding:16px 0;font-size:16px;font-weight:500;color:var(--pri);border-bottom:1px solid var(--bdr)}
+    .sec{padding:120px 0}.si{max-width:var(--mxw);margin:0 auto;padding:0 24px}.sl{font-size:13px;color:var(--mut);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}.st{font-size:32px;font-weight:700;line-height:1.3;margin-bottom:16px}.sd{font-size:16px;color:var(--sec);line-height:1.7;max-width:700px}.bp{display:inline-flex;align-items:center;padding:14px 32px;background:var(--pri);color:#fff;border-radius:32px;font-size:15px;font-weight:500;transition:transform .2s,opacity .2s}.bp:hover{transform:translateY(-2px);opacity:.9}
+    .fu{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.fu.vis{opacity:1;transform:translateY(0)}
+    .page-hero{padding:140px 24px 60px;text-align:center;max-width:900px;margin:0 auto}
+    .page-hero h1{font-size:38px;font-weight:700;line-height:1.3;margin-bottom:16px}
+    .page-hero p{font-size:16px;color:var(--sec);line-height:1.7}
+    .page-hero-img{max-width:700px;margin:32px auto 0}
+    .feat-sec{padding:80px 0}.feat-sec:nth-child(even){background:var(--bgl)}
+    .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:var(--mxw);margin:0 auto;padding:0 24px}
+    .feat-grid.reverse{direction:rtl}.feat-grid.reverse>*{direction:ltr}
+    .feat-img{border-radius:16px;overflow:hidden}
+    .feat-img img{width:100%;border-radius:16px}
+    .feat-text h2{font-size:24px;font-weight:700;margin-bottom:12px;line-height:1.3}
+    .feat-text h3{font-size:14px;color:var(--mut);font-weight:500;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+    .feat-text p{font-size:15px;color:var(--sec);line-height:1.7}
+    .two-img{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .two-img img{border-radius:12px}
+    .two-img figcaption{font-size:12px;color:var(--mut);text-align:center;margin-top:8px}
+    .cta-sec{text-align:center;padding:80px 24px}
+    .cta-sec h2{font-size:28px;font-weight:700;margin-bottom:24px}
+    .footer{background:#1a1a1a;color:#999;padding:60px 0 40px}.fti{max-width:var(--mxw);margin:0 auto;padding:0 24px}.ftt{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}.ftl img{height:28px;width:auto;margin-bottom:16px;filter:brightness(10)}.ftif{font-size:12px;line-height:1.8;color:#666}.ftif a{color:#888}.ftlk h4{font-size:13px;font-weight:600;color:#ccc;margin-bottom:16px}.ftlk a{display:block;font-size:13px;color:#888;padding:4px 0;transition:color .2s}.ftlk a:hover{color:#fff}.ftb{border-top:1px solid #333;padding-top:24px;font-size:12px;color:#555}
+    @media(max-width:768px){.sec{padding:80px 0}.hn,.hc,.lt{display:none}.hb{display:flex}.page-hero{padding:100px 24px 40px}.page-hero h1{font-size:26px}.feat-grid{grid-template-columns:1fr;gap:24px}.feat-grid.reverse{direction:ltr}.two-img{grid-template-columns:1fr}.ftt{grid-template-columns:1fr;gap:32px}}
+  </style>
+</head>
+<body>
+  <header class="header" id="header"><div class="hi"><a href="index.html" class="hl"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Flogo-rainbowcompany.png&w=384&q=75" alt="레인보우컴퍼니"></a><nav class="hn"><a href="index.html">홈</a><a href="ar-photocard.html" class="active">AR 포토카드</a><a href="ar-photokiosk.html">AR 포토키오스크</a><a href="ar-photosolution.html">AR 포토솔루션</a><a href="company.html">회사소개</a><a href="portfolio.html">포트폴리오</a></nav><div class="hr"><div class="lt"><span class="active">KO</span><span>EN</span></div><a href="contact.html" class="hc">온라인샵 바로가기 ↗</a><button class="hb" id="hbtn" aria-label="메뉴"><span></span><span></span><span></span></button></div></div></header>
+  <div class="mo" id="mo"></div><nav class="mn" id="mn"><a href="index.html">홈</a><a href="ar-photocard.html">AR 포토카드</a><a href="ar-photokiosk.html">AR 포토키오스크</a><a href="ar-photosolution.html">AR 포토솔루션</a><a href="company.html">회사소개</a><a href="portfolio.html">포트폴리오</a><a href="contact.html">문의하기</a></nav>
+
+  <div class="page-hero fu">
+    <h1>NUPY AR 포토카드</h1>
+    <p>국내의 많은 파트너들과 함께 FAN을 만듭니다.<br>다수 IP와의 협업 확장 및 기존 클라이언트와의 반복적 협업으로, AR 포토카드의 전파 및 사업 기반 확장</p>
+    <div class="page-hero-img"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-cards.png&w=2048&q=75" alt="AR 포토카드"></div>
+  </div>
+
+  <section class="feat-sec">
+    <div class="feat-grid fu">
+      <div class="feat-text">
+        <h3>수집의 니즈를 반영한 몰입형 콘텐츠 제작</h3>
+        <h2>퍼즐형/조합형</h2>
+        <p>개별 포토카드에는 각각의 AR 영상을 삽입, 모두 모아 인식하면 숨겨진 영상 재생. 수집의 니즈를 통해 수익성을 높이고 다양한 상품 구성(랜덤 뽑기, 특전 부여) 가능합니다.</p>
+      </div>
+      <div class="two-img">
+        <figure><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature1-1.png&w=1080&q=75" alt="개별 포토카드"><figcaption>AR 영상이 삽입된 개별 포토카드</figcaption></figure>
+        <figure><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature1-2.png&w=1080&q=75" alt="조합 스캔"><figcaption>조합된 카드 스캔 시 스페셜 영상 재생</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat-sec">
+    <div class="feat-grid reverse fu">
+      <div class="feat-text">
+        <h3>엔드카드를 통해 컨텐츠/채널로 유입 유도</h3>
+        <h2>엔드카드</h2>
+        <p>고객사가 지정하는 배너, 링크를 삽입하여 브랜드 채널, 캠페인 페이지로 유도해 마케팅 효과를 높일 수 있습니다.</p>
+      </div>
+      <div class="feat-img"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature2.png&w=2048&q=75" alt="엔드카드"></div>
+    </div>
+  </section>
+
+  <section class="feat-sec">
+    <div class="feat-grid fu">
+      <div class="feat-text">
+        <h3>정품 등록을 통해 영상 재생의 보안성 강화</h3>
+        <h2>익스클루시브</h2>
+        <p>QR, 시리얼 넘버, 비밀번호 등 정품 등록 후, 영상이 재생되도록 보안을 강화하여 콘텐츠의 독점성을 보장합니다.</p>
+      </div>
+      <div class="feat-img"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature3.png&w=2048&q=75" alt="익스클루시브"></div>
+    </div>
+  </section>
+
+  <section class="feat-sec">
+    <div class="feat-grid reverse fu">
+      <div class="feat-text">
+        <h3>타겟형, 논타겟형 3D 영상 증강</h3>
+        <h2>3D</h2>
+        <p>타겟형 및 논타겟형 3D 영상 증강을 통해 포토카드 위에 입체적인 콘텐츠를 구현합니다.</p>
+      </div>
+      <div class="two-img">
+        <figure><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature-3d-1.png&w=1080&q=75" alt="타겟형 3D"><figcaption>타겟형 3D 증강</figcaption></figure>
+        <figure><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature-3d-2.png&w=1080&q=75" alt="논타겟형 3D"><figcaption>논타겟형 3D 증강</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat-sec">
+    <div class="feat-grid fu">
+      <div class="feat-text">
+        <h3>포토카드를 표현할 다양한 재질 옵션</h3>
+        <h2>NUPY AR 포토카드 : 특수 인쇄</h2>
+        <p>PVC 카드 재질에 재전사 고품질 인쇄로 내구성을 높입니다. 실버 메탈, 투명, 홀로그램 등 다양한 재질을 통해 상품성을 높입니다.</p>
+      </div>
+      <div class="feat-img"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Far-photocard-feature4.png&w=1080&q=75" alt="특수 인쇄"></div>
+    </div>
+  </section>
+
+  <section class="cta-sec fu">
+    <h2>AR 포토카드가 궁금하신가요?</h2>
+    <a href="contact.html" class="bp">문의하기 →</a>
+  </section>
+
+  <footer class="footer"><div class="fti"><div class="ftt"><div><div class="ftl"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Flogo-rainbowcompany.png&w=384&q=75" alt="레인보우컴퍼니"></div><p class="ftif">주식회사 레인보우컴퍼니 대표 박지호 • 사업자번호 893-87-02847 • 주소 서울 강남구 역삼로 217 뉴콘텐츠기업지원센터 302호 06224 • 전화 02-563-8938 • <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8938702847" target="_blank">사업자번호확인</a><br><br>Sales/Partnership - <a href="mailto:contact@rainbowcp.net">contact@rainbowcp.net</a> | Service - <a href="mailto:help@rainbowcp.net">help@rainbowcp.net</a></p></div><div class="ftlk"><h4>Features</h4><a href="ar-photocard.html">AR Photo Card</a><a href="ar-photokiosk.html">AR Photo Kiosk</a><a href="ar-photosolution.html">AR Solution</a></div><div class="ftlk"><h4>Company</h4><a href="company.html">About</a><a href="portfolio.html">Portfolio</a></div><div class="ftlk"><h4>Support</h4><a href="contact.html">Contact</a><a href="https://nupyar.com" target="_blank">Online Shop</a></div></div><div class="ftb"><p>ⓒ 2022–2026 Rainbow Company Corp. All rights reserved.</p></div></div></footer>
+
+  <script>
+    window.addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',scrollY>50));
+    const hbtn=document.getElementById('hbtn'),mn=document.getElementById('mn'),mo=document.getElementById('mo');
+    function tgl(){hbtn.classList.toggle('open');mn.classList.toggle('open');mo.classList.toggle('open');document.body.style.overflow=mn.classList.contains('open')?'hidden':''}
+    hbtn.onclick=tgl;mo.onclick=tgl;document.querySelectorAll('.mn a').forEach(a=>a.onclick=tgl);
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
