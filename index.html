@@ -109,8 +109,8 @@
     .ss{font-size:15px;color:var(--sec);margin-bottom:4px}
     .st{font-size:32px;font-weight:700;line-height:1.3;margin-bottom:16px}
     .sd{font-size:16px;color:var(--sec);line-height:1.7;max-width:600px}
-    .sli{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:500;color:var(--pri);margin-top:16px;transition:gap .2s}
-    .sli:hover{gap:8px}
+    .sli{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:500;color:var(--pri);margin-top:16px;padding:10px 24px;border:1px solid var(--bdr);border-radius:24px;transition:border-color .2s,gap .2s}
+    .sli:hover{gap:8px;border-color:var(--pri)}
     .bp{display:inline-flex;align-items:center;padding:14px 32px;background:var(--pri);color:#fff;border-radius:32px;font-size:15px;font-weight:500;transition:transform .2s,opacity .2s}
     .bp:hover{transform:translateY(-2px);opacity:.9}
     .bs{display:inline-flex;align-items:center;padding:14px 32px;background:transparent;color:var(--pri);border:1px solid var(--bdr);border-radius:32px;font-size:15px;font-weight:500;transition:.2s}
@@ -132,7 +132,9 @@
     .av video{width:100%;height:100%;object-fit:cover}
     .ab{display:flex;gap:12px;margin-top:24px}
     .ab img{height:40px;width:auto}
-    .al{display:inline-block;margin-top:16px;font-size:14px;font-weight:500;color:var(--pri)}
+    .al{display:inline-flex;align-items:center;margin-top:16px;font-size:14px;font-weight:500;color:var(--pri);padding:10px 24px;border:1px solid var(--bdr);border-radius:24px;transition:border-color .2s}
+    .al:hover{border-color:var(--pri)}
+    .bps{padding:10px 24px;font-size:14px}
 
     /* 포토카드 */
     .pg{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:48px;margin-bottom:60px}
@@ -248,7 +250,7 @@
       <div class="him"><img src="https://www.rainbowcompany.net/_next/image?url=%2Fimages%2Fhome-nupy.png&w=2048&q=75" alt="NUPY"></div>
       <div class="hbs">
         <a href="contact.html" class="bp">문의하기</a>
-        <a href="ar-photocard.html" class="bs">서비스 알아보기</a>
+        <a href="nupy-service-2026.pdf" download class="bs">서비스 소개서</a>
       </div>
     </div>
   </section>
@@ -297,7 +299,7 @@
           <div><h3>사는 포토카드가 아닌, 직접 제작하는 나만의 포토카드</h3><p>NUPY AR 클라우드 솔루션을 통해 나만의 사진과 영상을 등록하고, 키오스크 출력을 통해 나만의 커스터마이징 포토카드를 손쉽게 제작합니다.</p></div>
           <div><h3>브랜디드 스킨으로 마케팅 효과를 극대화</h3><p>키오스크 외장에 고객사의 브랜드를 삽입할 수 있습니다. 키오스크 앱에 고객사의 이미지, 영상 등을 삽입할 수 있습니다.</p></div>
           <div><h3>간편한 설치로 언제 어디서나</h3><p>600 X 500 X 1800 사이즈, 시간당 40장의 PVC 카드 출력 성능을 자랑합니다. 페스티벌, 지역행사, 컨벤션 등 다양한 지역과 행사장에 대응이 가능합니다.</p></div>
-          <a href="contact.html" class="bp" style="margin-top:16px">문의하기 →</a>
+          <a href="contact.html" class="bp bps" style="margin-top:16px">문의하기 →</a>
         </div>
       </div>
     </div>
